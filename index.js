@@ -74,15 +74,15 @@ Person.prototype.toString = function () {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
 
-function Car(model, milesPereGallon) {
+function Car(model, milesPerGallon) {
   this.model = model;
-  this.milesPereGallon = milesPereGallon;
-  this.tank = [];
+  this.milesPerGallon = milesPerGallon;
+  this.tank = 0;
   this.odometer = 0;
 }
 Car.prototype.fill = function (gallons) {
-  if (this.tank.length < 12) {
-    this.tank.push(gallons);
+  if (this.tank.length < 1) {
+    this.tank(10);
   }
 };
 
@@ -94,8 +94,9 @@ Car.prototype.fill = function (gallons) {
           + Should return a string "Playing with x", x being the favorite toy.
   */
 function Baby(name, age, favoriteToy) {
-  this.name = name;
-  this.age = age;
+  Person.call(this, name, age);
+  // this.name = name;
+  // this.age = age;
   this.favoriteToy = favoriteToy;
 }
 Baby.prototype = Object.create(Person.prototype);
