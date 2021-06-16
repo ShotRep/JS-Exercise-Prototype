@@ -88,7 +88,7 @@ Car.prototype.fill = function (gallons) {
 
 /*
     TASK 3
-      - Write a Baby constructor subclassing Person.
+      - Write a Baby constructor subclassing Person, in Task1.
       - Besides `name` and `age`, Baby takes a third argument to initialize `favoriteToy`.
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
@@ -98,9 +98,16 @@ function Baby(name, age, favoriteToy) {
   this.age = age;
   this.favoriteToy = favoriteToy;
 }
+Baby.prototype = Object.create(Person.prototype);
 Baby.prototype.play = function () {
   return `Playing with ${this.favoriteToy} , ${this.favoriteToy} being the favorite toy`;
 };
+const babyOne = new Baby("Charlie", "1 Week", "Silver rattle");
+
+console.log(babyOne);
+console.log(babyOne.name);
+console.log(babyOne.age);
+console.log(babyOne.favoriteToy);
 
 /* 
     TASK 4
