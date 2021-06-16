@@ -2,7 +2,7 @@
   EXAMPLE TASK:
 
   INITIALIZE WITH ARGUMENTS TODAY
-  
+
     - Write an Airplane constructor that initializes `name` from an argument.
     - All airplanes built with Airplane should initialize with an `isFlying` of false.
     - Give airplanes the ability to `.takeOff()` and `.land()`:
@@ -60,18 +60,6 @@ Person.prototype.toString = function () {
   return `${this.name}, ${this.age}`;
 };
 
-// const romy = new Person(`Romy`, 29);
-
-// console.log(romy);
-
-// console.log(jordan.eat("Tacos"));
-
-// console.log(romy.stomach)
-
-// console.log.poop()
-
-// console.log(romy.stomach)
-
 /*
     TASK 2
       - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
@@ -86,7 +74,17 @@ Person.prototype.toString = function () {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
 
-function Car() {}
+function Car(model, milesPereGallon) {
+  this.model = model;
+  this.milesPereGallon = milesPereGallon;
+  this.tank = [];
+  this.odometer = 0;
+}
+Car.prototype.fill = function (gallons) {
+  if (this.tank.length < 12) {
+    this.tank.push(gallons);
+  }
+};
 
 /*
     TASK 3
