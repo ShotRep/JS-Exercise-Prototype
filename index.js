@@ -106,9 +106,12 @@ Baby.prototype.play = function () {
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
     1. Window Binding: 
-    2. Implicit Binding:
-    3. Explicit Binding:
-    4. New Binding
+    2. Implicit Binding:  Used the most, check left of the dot this is the object 'this' wil be bound to.
+    3. Explicit Binding:  Call a function with an object using call() - apply() - bind() methods
+    call(): add object as a parameter to call() will immediately run the function
+    apply(): much like call but we add an array as the parameter, also immediately runs the function
+    bind(): returns a new function that can be used later, not immediately ran.
+    4. New Binding: 
   */
 
 ///////// END OF CHALLENGE /////////
