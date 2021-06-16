@@ -93,15 +93,22 @@ Car.prototype.fill = function (gallons) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
-function Baby() {}
+function Baby(name, age, favoriteToy) {
+  this.name = name;
+  this.age = age;
+  this.favoriteToy = favoriteToy;
+}
+Baby.prototype.play = function () {
+  return `Playing with ${this.favoriteToy} , ${this.favoriteToy} being the favorite toy`;
+};
 
 /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. Window Binding: 
+    2. Implicit Binding:
+    3. Explicit Binding:
+    4. New Binding
   */
 
 ///////// END OF CHALLENGE /////////
