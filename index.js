@@ -1,5 +1,8 @@
 /*
   EXAMPLE TASK:
+
+  INITIALIZE WITH ARGUMENTS TODAY
+  
     - Write an Airplane constructor that initializes `name` from an argument.
     - All airplanes built with Airplane should initialize with an `isFlying` of false.
     - Give airplanes the ability to `.takeOff()` and `.land()`:
@@ -38,7 +41,36 @@ Airplane.prototype.land = function () {
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
 
-function Person() {}
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.stomach = [];
+}
+Person.prototype.eat = function (edible) {
+  if (this.stomach.length <= 10) {
+    this.stomach.push(edible);
+  }
+};
+
+Person.prototype.poop = function () {
+  this.stomach = [];
+};
+
+Person.prototype.toString = function () {
+  return `${this.name}, ${this.age}`;
+};
+
+// const romy = new Person(`Romy`, 29);
+
+// console.log(romy);
+
+// console.log(jordan.eat("Tacos"));
+
+// console.log(romy.stomach)
+
+// console.log.poop()
+
+// console.log(romy.stomach)
 
 /*
     TASK 2
